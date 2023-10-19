@@ -1,4 +1,5 @@
-import 'package:advanced_structure_app/presentation/theme_manager.dart';
+import 'package:advanced_structure_app/presentation/resources/routes_manager.dart';
+import 'package:advanced_structure_app/presentation/resources/theme_manager.dart';
 import 'package:flutter/material.dart';
 
 // * Application class
@@ -25,12 +26,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      onGenerateRoute: RouteGenerator.generateRoute,
+      initialRoute: Routes.splashRoute,
       theme: getApplicationTheme(),
-      home: const Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
-        ),
-      ),
+      
     );
   }
 }

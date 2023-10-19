@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'package:advanced_structure_app/app/my_app.dart';
 import 'package:flutter/material.dart';
 
