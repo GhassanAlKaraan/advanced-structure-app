@@ -1,3 +1,5 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:advanced_structure_app/presentation/resources/routes_manager.dart';
 import 'package:advanced_structure_app/presentation/resources/theme_manager.dart';
 import 'package:flutter/material.dart';

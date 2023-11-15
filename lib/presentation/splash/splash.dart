@@ -1,3 +1,5 @@
+// ignore_for_file: unused_field
+
 import 'dart:async';
 
 import 'package:advanced_structure_app/presentation/resources/assets_manager.dart';
