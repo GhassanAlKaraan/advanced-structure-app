@@ -1,5 +1,3 @@
-# advanced_structure_app: DISCONTINUED
+# on-boarding page demo
 
-A new Flutter project showcasing a Clean MVVM Architecture.
-
-### This project is discontinued because it follows an outdated course.
+A new Flutter project following MVVM architecture.
