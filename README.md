@@ -1,3 +1,3 @@
 # on-boarding page demo
 
-A new Flutter project following MVVM architecture.
+A PageView demo in Flutter following the MVVM architecture.
