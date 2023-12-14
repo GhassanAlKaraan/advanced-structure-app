@@ -34,7 +34,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: ColorManager.white,
-        elevation: AppSize.s1_5,
+        elevation: AppSize.s0,
         systemOverlayStyle: SystemUiOverlayStyle(
           statusBarColor: ColorManager.white,
           statusBarBrightness: Brightness.dark,
@@ -79,6 +79,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
     );
   }
 
+//* Circles design
   Widget _getBottomSheetWidget() {
     return Container(
       color: ColorManager.primary,
@@ -133,7 +134,6 @@ class _OnBoardingViewState extends State<OnBoardingView> {
       ),
     );
   }
-
   _getPreviousIndex() {
     if (_currentIndex == 0) {
       return _list.length - 1;
@@ -141,7 +141,6 @@ class _OnBoardingViewState extends State<OnBoardingView> {
       return _currentIndex - 1;
     }
   }
-
   _getNextIndex() {
     if (_currentIndex == _list.length - 1) {
       return 0;
@@ -149,7 +148,6 @@ class _OnBoardingViewState extends State<OnBoardingView> {
       return _currentIndex + 1;
     }
   }
-
   Widget _getProperCircle(int index) {
     if (index == _currentIndex) {
       return SvgPicture.asset(ImageAssets.hollowCircleIc);
@@ -158,7 +156,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
     }
   }
 }
-
+//* Page design
 class OnBoardingPage extends StatelessWidget {
   const OnBoardingPage(this._sliderObject, {super.key});
 
@@ -183,7 +181,7 @@ class OnBoardingPage extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.all(AppPadding.p8),
           child: Text(
-            _sliderObject.title,
+            _sliderObject.subTitle,
             textAlign: TextAlign.center,
             style: Theme.of(context).textTheme.titleMedium,
           ),
@@ -199,12 +197,4 @@ class OnBoardingPage extends StatelessWidget {
       ],
     );
   }
-}
-
-class SliderObject {
-  String title;
-  String subTitle;
-  String image;
-
-  SliderObject(this.title, this.subTitle, this.image);
 }

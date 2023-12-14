@@ -7,7 +7,6 @@ TextStyle _getTextStyle(
 }
 
 // regular style
-
 TextStyle getRegularStyle(
     {double fontSize = FontSize.s12, required Color color}) {
   return _getTextStyle(
@@ -15,7 +14,6 @@ TextStyle getRegularStyle(
 }
 
 // light style
-
 TextStyle getLightStyle(
     {double fontSize = FontSize.s12, required Color color}) {
   return _getTextStyle(
