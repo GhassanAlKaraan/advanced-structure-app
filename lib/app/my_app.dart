@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 
 // * Application class
 class MyApp extends StatelessWidget {
+  
   // * Factory constructor
   // factory MyApp() => instance;
   factory MyApp() {
@@ -32,7 +33,6 @@ class MyApp extends StatelessWidget {
       onGenerateRoute: RouteGenerator.generateRoute,
       initialRoute: Routes.splashRoute,
       theme: getApplicationTheme(),
-      
     );
   }
 }

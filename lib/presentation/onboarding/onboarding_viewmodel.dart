@@ -67,11 +67,11 @@ class OnBoardingViewModel extends BaseViewModel
   }
 
   //* Input Section Getter
-  @override
+  @override //! Sink
   Sink get inputSliderViewObject => _streamController.sink;
 
   //* Output Section Getter
-  @override
+  @override //! Stream
   Stream<SliderViewObject> get outputSliderViewObject =>
       _streamController.stream.map((sliderViewObject) => sliderViewObject);
 
@@ -87,8 +87,7 @@ class OnBoardingViewModel extends BaseViewModel
             AppStrings.onBoardingSubTitle4, ImageAssets.onboardingLogo4),
       ];
 
-  _postDataToView() {
-    // Add data to sink
+  _postDataToView() { // Add data to sink
     inputSliderViewObject.add(
         SliderViewObject(_currentIndex, _list.length, _list[_currentIndex]));
   }

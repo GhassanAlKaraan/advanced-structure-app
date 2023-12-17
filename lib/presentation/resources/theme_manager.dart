@@ -14,16 +14,16 @@ ThemeData getApplicationTheme() {
     primaryColorDark: ColorManager.darkPrimary,
     disabledColor: ColorManager.grey1, // for disabled buttons
     // colorScheme: ColorScheme(brightness: brightness,
-    // primary: primary,
-    // onPrimary: onPrimary,
-    // secondary: secondary,
-    // onSecondary: onSecondary,
-    // error: error,
-    // onError: onError,
-    // background: background,
-    // onBackground: onBackground,
-    // surface: surface,
-    // onSurface: onSurface),
+    //   primary: primary,
+    //   onPrimary: onPrimary,
+    //   secondary: secondary,
+    //   onSecondary: onSecondary,
+    //   error: error,
+    //   onError: onError,
+    //   background: background,
+    //   onBackground: onBackground,
+    //   surface: surface,
+    //   onSurface: onSurface),
     splashColor: ColorManager.primaryOpacity70, // for inkwell color.
 
     //* Card View theme

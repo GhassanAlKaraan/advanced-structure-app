@@ -1,4 +1,4 @@
-abstract class BaseViewModel extends  BaseViewModelInputs with BaseViewModelOutputs {
+abstract class BaseViewModel extends BaseViewModelInputs with BaseViewModelOutputs {
   // Shared variables and methods that will be used through any view model
 }
 
@@ -8,5 +8,5 @@ abstract class BaseViewModelInputs {
 }
 
 mixin BaseViewModelOutputs {
-  void testing();
+  void testing(); // Not used ?
 }

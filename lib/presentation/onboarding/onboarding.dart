@@ -38,6 +38,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
     super.dispose();
   }
 
+  // Build a Stream of SliderViewObject
   @override
   Widget build(BuildContext context) {
     // return _getContentWidget();
@@ -49,7 +50,8 @@ class _OnBoardingViewState extends State<OnBoardingView> {
     );
   }
 
-  Widget _getContentWidget(SliderViewObject? sliderViewObject) { //
+  // Scaffold
+  Widget _getContentWidget(SliderViewObject? sliderViewObject) {
     if (sliderViewObject == null) {
       return Container();
     } else {
@@ -85,13 +87,15 @@ class _OnBoardingViewState extends State<OnBoardingView> {
                   onPressed: () {
                     Navigator.pushNamed(context, Routes.loginRoute);
                   },
-                  child: Text(AppStrings.skip,
-                      textAlign: TextAlign.end,
-                      style: Theme.of(context).textTheme.titleMedium),
+                  child: Text(
+                    AppStrings.skip,
+                    textAlign: TextAlign.end,
+                    style: Theme.of(context).textTheme.titleMedium,
+                  ),
                 ),
               ),
 
-              //* Indicator and arrows
+              // Indicator circles and arrows
               _getBottomSheetWidget(sliderViewObject) //
             ],
           ),
@@ -100,8 +104,8 @@ class _OnBoardingViewState extends State<OnBoardingView> {
     }
   }
 
-//* Circles design
-  Widget _getBottomSheetWidget(SliderViewObject sliderViewObject) { //
+// Circles design and display functions
+  Widget _getBottomSheetWidget(SliderViewObject sliderViewObject) {
     return Container(
       color: ColorManager.primary,
       child: Row(
@@ -165,7 +169,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
   }
 }
 
-//* Page design
+// Prepared the page design for every SlideObject, 1-2-3
 class OnBoardingPage extends StatelessWidget {
   const OnBoardingPage(this._sliderObject, {super.key});
 
@@ -176,9 +180,7 @@ class OnBoardingPage extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
-        const SizedBox(
-          height: AppSize.s40,
-        ),
+        const SizedBox(height: AppSize.s40),
         Padding(
           padding: const EdgeInsets.all(AppPadding.p8),
           child: Text(
@@ -195,9 +197,7 @@ class OnBoardingPage extends StatelessWidget {
             style: Theme.of(context).textTheme.titleMedium,
           ),
         ),
-        const SizedBox(
-          height: AppSize.s60,
-        ),
+        const SizedBox(height: AppSize.s60),
         SvgPicture.asset(
           _sliderObject.image,
           width: AppSize.s200,
