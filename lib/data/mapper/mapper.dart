@@ -5,7 +5,7 @@
 import 'package:advanced_structure_app/app/entensions.dart';
 import 'package:advanced_structure_app/data/responses/responses.dart';
 
-import '../../domain/model.dart';
+import '../../domain/model/model.dart';
 
 const EMPTY = "";
 const ZERO = 0;
