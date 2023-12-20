@@ -1,5 +1,4 @@
 // ignore_for_file: constant_identifier_names
-
 import 'package:advanced_structure_app/data/network/failure.dart';
 import 'package:dio/dio.dart';
 
@@ -17,16 +16,70 @@ enum DataSource {
   SEND_TIMEOUT,
   CACHE_ERROR,
   NO_INTERNET_CONNECTION,
+  SSL_CERT_ERROR,
   DEFAULT
 }
 
 class ErrorHandler implements Exception {
   late Failure failure;
-  ErrorHandler.handle(dynamic error){
-    if(error is DioError){
-      // dio error so it's error from response of the API
-    }else{
+
+  ErrorHandler.handle(dynamic exception) {
+    if (exception is DioException) {
+      try {
+        failure = _handleError(exception);
+      } on DioException catch (e) {
+        // ignore: avoid_print
+        print(e.message);
+        // Handle unexpected error during error handling
+        failure = DataSource.DEFAULT.getFailure();
+        rethrow; // Rethrow the original error
+      }
+    } else {
+      // Handle non-Dio errors (optional)
       failure = DataSource.DEFAULT.getFailure();
+    }
+  }
+
+  Failure _handleError(DioException exception) {
+    switch (exception.type) {
+      case DioExceptionType.connectionTimeout:
+        return DataSource.CONNECT_TIMEOUT.getFailure();
+
+      case DioExceptionType.sendTimeout:
+        return DataSource.SEND_TIMEOUT.getFailure();
+
+      case DioExceptionType.receiveTimeout:
+        return DataSource.RECEIVE_TIMEOUT.getFailure();
+
+      case DioExceptionType.badCertificate:
+        return DataSource.SSL_CERT_ERROR.getFailure();
+
+      case DioExceptionType.badResponse:
+        switch (exception.response?.statusCode) {
+          case ResponseCode.BAD_REQUEST:
+            return DataSource.BAD_REQUEST.getFailure();
+          case ResponseCode.FORBIDDEN:
+            return DataSource.FORBIDDEN.getFailure();
+          case ResponseCode.UNAUTHORISED:
+            return DataSource.UNAUTHORISED.getFailure();
+          case ResponseCode.NOT_FOUND:
+            return DataSource.NOT_FOUND.getFailure();
+          case ResponseCode.INTERNAL_SERVER_ERROR:
+            return DataSource.INTERNAL_SERVER_ERROR.getFailure();
+          case ResponseCode.CACHE_ERROR:
+            return DataSource.CACHE_ERROR.getFailure();
+          default:
+            return DataSource.DEFAULT.getFailure();
+        }
+
+      case DioExceptionType.cancel:
+        return DataSource.CANCEL.getFailure();
+
+      case DioExceptionType.connectionError:
+        return DataSource.NO_INTERNET_CONNECTION.getFailure();
+
+      case DioExceptionType.unknown:
+        return DataSource.DEFAULT.getFailure();
     }
   }
 }
@@ -62,6 +115,9 @@ extension DataSourceExtension on DataSource {
       case DataSource.NO_INTERNET_CONNECTION:
         return Failure(ResponseCode.NO_INTERNET_CONNECTION,
             ResponseMessage.NO_INTERNET_CONNECTION);
+      case DataSource.SSL_CERT_ERROR:
+        return Failure(ResponseCode.SSL_CERT_ERROR,
+            ResponseMessage.SSL_CERT_ERROR);
       default:
         return Failure(ResponseCode.DEFAULT, ResponseMessage.DEFAULT);
     }
@@ -79,6 +135,7 @@ class ResponseCode {
       404; // failure, api url is not correct and not found
   static const int INTERNAL_SERVER_ERROR =
       500; // failure, crash happened in server side
+  static const int SSL_CERT_ERROR = 526; // failure, bad certificate
 
   // Local status codes
   static const int DEFAULT = -1;
@@ -104,6 +161,7 @@ class ResponseMessage {
       "Url is not found, try again later"; // failure, api url is not correct and not found
   static const String INTERNAL_SERVER_ERROR =
       "Something went wrong, try again later"; // failure, crash happened in server side
+  static const String SSL_CERT_ERROR = "Bad SSL certificate, try again later";
 
   // Local status codes
   static const String DEFAULT = "Something went wrong, try again later";
