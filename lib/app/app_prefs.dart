@@ -1,3 +1,5 @@
+// ignore_for_file: constant_identifier_names
+
 import 'package:advanced_structure_app/presentation/resources/language_manager.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
