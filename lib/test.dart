@@ -1,6 +1,6 @@
 // ignore_for_file: avoid_print
 
-import 'package:advanced_structure_app/app/my_app.dart';
+import 'package:flutter_mvvm/app/my_app.dart';
 import 'package:flutter/material.dart';
 
 class Test extends StatelessWidget {
