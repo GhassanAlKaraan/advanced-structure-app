@@ -2,9 +2,9 @@
 
 import 'dart:async';
 
-import 'package:advanced_structure_app/presentation/resources/assets_manager.dart';
-import 'package:advanced_structure_app/presentation/resources/color_manager.dart';
-import 'package:advanced_structure_app/presentation/resources/routes_manager.dart';
+import 'package:flutter_mvvm/presentation/resources/assets_manager.dart';
+import 'package:flutter_mvvm/presentation/resources/color_manager.dart';
+import 'package:flutter_mvvm/presentation/resources/routes_manager.dart';
 import 'package:flutter/material.dart';
 
 class SplashView extends StatefulWidget {

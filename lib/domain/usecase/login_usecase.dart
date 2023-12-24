@@ -1,9 +1,9 @@
-import 'package:advanced_structure_app/app/functions.dart';
-import 'package:advanced_structure_app/data/network/failure.dart';
-import 'package:advanced_structure_app/data/request/request.dart';
-import 'package:advanced_structure_app/domain/model/model.dart';
-import 'package:advanced_structure_app/domain/repository/repository.dart';
-import 'package:advanced_structure_app/domain/usecase/base_usecase.dart';
+import 'package:flutter_mvvm/app/functions.dart';
+import 'package:flutter_mvvm/data/network/failure.dart';
+import 'package:flutter_mvvm/data/request/request.dart';
+import 'package:flutter_mvvm/domain/model/model.dart';
+import 'package:flutter_mvvm/domain/repository/repository.dart';
+import 'package:flutter_mvvm/domain/usecase/base_usecase.dart';
 import 'package:dartz/dartz.dart';
 
 class LoginUseCase implements BaseUseCase<LoginUseCaseInput, Authentication> {

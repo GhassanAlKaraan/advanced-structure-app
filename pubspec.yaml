@@ -1,4 +1,4 @@
-name: advanced_structure_app
+name: flutter_mvvm
 description: "A new Flutter project."
 publish_to: 'none'
 version: 0.1.0
@@ -21,6 +21,15 @@ dependencies:
   shared_preferences: ^2.2.2
   device_info: ^2.0.3
   freezed: ^2.4.6
+  get_it: 
+  lottie: 
+  country_code_picker: 
+  image_picker: 
+  rxdart: 
+  carousel_slider: 
+  easy_localization: 
+  flutter_phoenix: 
+  freezed_annotation: ^2.4.1
 
 
 
@@ -49,13 +58,23 @@ flutter:
           weight: 300
 
   assets:
-    - assets/images/splash_logo.png
-    - assets/images/onboarding_logo1.svg
-    - assets/images/onboarding_logo2.svg
-    - assets/images/onboarding_logo3.svg
-    - assets/images/onboarding_logo4.svg
-    - assets/images/right_arrow_ic.svg
-    - assets/images/solid_circle_ic.svg
-    - assets/images/hollow_circle_ic.svg
-    - assets/images/left_arrow_ic.svg
-        
+     - assets/images/splash_logo.png
+     - assets/images/onboarding_logo1.svg
+     - assets/images/onboarding_logo2.svg
+     - assets/images/onboarding_logo3.svg
+     - assets/images/onboarding_logo4.svg
+     - assets/images/hollow_circle_ic.svg
+     - assets/images/left_arrow_ic.svg
+     - assets/images/right_arrow_ic.svg
+     - assets/images/solid_circle_ic.svg
+     - assets/images/photo_camera_ic.svg
+     - assets/images/settings_right_arrow_ic.svg
+     - assets/images/change_lang_ic.svg
+     - assets/images/contact_us_ic.svg
+     - assets/images/invite_friends_ic.svg
+     - assets/images/logout_ic.svg
+     - assets/json/loading.json
+     - assets/json/error.json
+     - assets/json/empty.json
+     - assets/json/success.json
+     - assets/translations/

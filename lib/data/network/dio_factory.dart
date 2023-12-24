@@ -1,7 +1,7 @@
-// ignore_for_file: constant_identifier_names
+// ignore_for_file: avoid_print, constant_identifier_names
 
-import 'package:advanced_structure_app/app/app_prefs.dart';
-import 'package:advanced_structure_app/app/constant.dart';
+import 'package:flutter_mvvm/app/app_prefs.dart';
+import 'package:flutter_mvvm/app/constant.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
@@ -18,18 +18,14 @@ class DioFactory {
   DioFactory(this._appPreferences);
 
   Future<Dio> getDio() async {
-    // Dio instance
     Dio dio = Dio();
-
-    Duration timeOut = const Duration(seconds: 60); // 1min
-
+    Duration timeOut = const Duration(seconds: 60);
     String language = await _appPreferences.getAppLanguage();
-
-    // Headers
+    String token = await _appPreferences.getUserToken();
     Map<String, String> headers = {
       CONTENT_TYPE: APPLICATION_JSON,
       ACCEPT: APPLICATION_JSON,
-      AUTHORIZATION: Constant.token,
+      AUTHORIZATION: token,
       DEFAULT_LANGUAGE: language
     };
 
@@ -40,8 +36,7 @@ class DioFactory {
         headers: headers);
 
     if (kReleaseMode) {
-      // ignore: avoid_print
-      print("Release mode no logs");
+      print("release mode no logs");
     } else {
       dio.interceptors.add(PrettyDioLogger(
           requestHeader: true, requestBody: true, responseHeader: true));
