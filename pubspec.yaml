@@ -21,7 +21,7 @@ dependencies:
   shared_preferences: ^2.2.2
   device_info: ^2.0.3
   freezed: ^2.4.6
-  get_it: 
+  get_it: ^7.6.4
   lottie: 
   country_code_picker: 
   image_picker: 

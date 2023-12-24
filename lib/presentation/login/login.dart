@@ -142,8 +142,8 @@ class _LoginViewState extends State<LoginView> {
                 Padding(
                   padding: const EdgeInsets.only(
                     top: AppPadding.p8,
-                    left: AppPadding.p28,
-                    right: AppPadding.p28,
+                    left: AppPadding.p20,
+                    right: AppPadding.p20,
                   ),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
