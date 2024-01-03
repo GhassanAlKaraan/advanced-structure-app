@@ -1,6 +1,6 @@
 # Flutter mvvm demo
-Flutter project + MVVM architecture. /
-Following the 'Flutter Advanced Course - Clean Architecture With MVVM' udemy course /
+Flutter project + MVVM architecture. \
+Following the 'Flutter Advanced Course - Clean Architecture With MVVM' udemy course. \
 Project files are updated (Jan 2024)
 
 ## More
